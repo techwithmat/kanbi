@@ -1,4 +1,4 @@
-CREATE TABLE "user" (
+CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   email VARCHAR(30) UNIQUE NOT NULL,
   username VARCHAR(50) NOT NULL,
@@ -8,14 +8,14 @@ CREATE TABLE "user" (
 CREATE TABLE board (
   id SERIAL PRIMARY KEY,
   name VARCHAR(50) NOT NULL,
-  user_id INT NOT NULL REFERENCES "user"(id)
+  user_id INT NOT NULL REFERENCES users(id)
 );
 
 CREATE TABLE board_column (
   id SERIAL PRIMARY KEY,
   name VARCHAR(50) NOT NULL,
   board_id INT NOT NULL REFERENCES board(id) ON DELETE CASCADE,
-  user_id INT NOT NULL REFERENCES "user"(id)
+  user_id INT NOT NULL REFERENCES users(id)
 );
 
 CREATE TABLE task (
@@ -23,5 +23,5 @@ CREATE TABLE task (
   title VARCHAR(50) NOT NULL,
   description TEXT,
   board_column_id INT NOT NULL REFERENCES board_column(id) ON DELETE CASCADE,
-  user_id INT NOT NULL REFERENCES "user"(id)
+  user_id INT NOT NULL REFERENCES users(id)
 );
