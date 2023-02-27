@@ -12,8 +12,11 @@ const config = {
     alias: {
       '#routes': 'src/routes',
       '#components': 'src/lib/components',
-      '#icons': 'src/lib/components/Icons'
-    }
+      '#icons': 'src/lib/components/Icons',
+      '#services': 'src/lib/services',
+      '#constants': 'src/lib/constants'
+    },
+    
   }
 };
 

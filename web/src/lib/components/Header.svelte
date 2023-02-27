@@ -4,7 +4,7 @@
 	import Logo from './Logo.svelte';
 </script>
 
-<header class="h-16 w-full fixed top-0 z-50 border-b border-zinc-700">
+<header class="h-16 w-full fixed top-0 z-50 border-b border-zinc-700 bg-zinc-900">
 	<div class="h-full flex items-center justify-between gap-2 px-3 max-w-screen-xl mx-auto">
 		<Logo />
 

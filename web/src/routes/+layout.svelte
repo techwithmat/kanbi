@@ -4,7 +4,7 @@
 </script>
 
 <Header />
-<main class="px-3 mt-20">
+<main>
 	<slot />
 </main>
 
