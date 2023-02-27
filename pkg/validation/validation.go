@@ -18,7 +18,7 @@ func ValidateStruct(i interface{}) []*ErrorResponse {
 	if err != nil {
 		for _, err := range err.(validator.ValidationErrors) {
 			var element ErrorResponse
-			
+
 			element.FailedField = err.StructNamespace()
 			element.Tag = err.Tag()
 			element.Value = err.Param()
