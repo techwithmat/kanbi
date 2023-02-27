@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/techwithmat/kanban-app/pkg/env"
+	"github.com/techwithmat/kanbi/pkg/env"
 )
 
 func GenerateAccessToken(userId int, username string) (string, error) {

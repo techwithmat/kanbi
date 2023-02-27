@@ -1,6 +1,6 @@
 package config
 
-import "github.com/techwithmat/kanban-app/pkg/env"
+import "github.com/techwithmat/kanbi/pkg/env"
 
 type Config struct {
 	Port     string

@@ -4,8 +4,8 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/techwithmat/kanban-app/pkg/encryption"
-	v "github.com/techwithmat/kanban-app/pkg/validation"
+	"github.com/techwithmat/kanbi/pkg/encryption"
+	v "github.com/techwithmat/kanbi/pkg/validation"
 )
 
 func (h *UserHandler) RegisterUser(c *fiber.Ctx) error {

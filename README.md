@@ -1,1 +1,1 @@
-# kanban-app
+# kanbi

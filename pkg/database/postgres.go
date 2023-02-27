@@ -6,7 +6,7 @@ import (
 	"log"
 
 	"github.com/jackc/pgx/v5"
-	"github.com/techwithmat/kanban-app/config"
+	"github.com/techwithmat/kanbi/config"
 )
 
 func NewDBConnection(ctx context.Context, c *config.Database) (*pgx.Conn, error) {

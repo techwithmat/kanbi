@@ -1,4 +1,4 @@
-module github.com/techwithmat/kanban-app
+module github.com/techwithmat/kanbi
 
 go 1.20
 

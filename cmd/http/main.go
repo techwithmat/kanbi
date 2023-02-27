@@ -8,9 +8,9 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 
-	c "github.com/techwithmat/kanban-app/config"
-	"github.com/techwithmat/kanban-app/internal/user"
-	"github.com/techwithmat/kanban-app/pkg/database"
+	c "github.com/techwithmat/kanbi/config"
+	"github.com/techwithmat/kanbi/internal/user"
+	"github.com/techwithmat/kanbi/pkg/database"
 )
 
 func main() {
