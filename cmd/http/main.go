@@ -29,7 +29,7 @@ func main() {
 	app.Use(logger.New())
 
 	app.Use(cors.New(cors.Config{
-		AllowOrigins:     "https://kanbi.vercel.app",
+		AllowOrigins:     "https://kanbi.vercel.app, http://localhost:5173",
 		AllowHeaders:     "Content-Type",
 		AllowCredentials: true,
 	}))
