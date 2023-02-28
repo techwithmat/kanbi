@@ -3,7 +3,7 @@ package user
 import "context"
 
 type User struct {
-	ID       int    `json:"id"`
+	ID       string `json:"id"`
 	Email    string `json:"email"`
 	Username string `json:"username"`
 	Password string `json:"password,omitempty"`
@@ -28,4 +28,5 @@ type DeleteRequest struct {
 type userRepository interface {
 	Insert(ctx context.Context, user *RegisterRequest) (int, error)
 	GetByEmail(ctx context.Context, param string) (*User, error)
+	GetById(ctx context.Context, userId string) (*User, error)
 }

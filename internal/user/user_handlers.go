@@ -62,7 +62,7 @@ func (h *UserHandler) LoginUser(c *fiber.Ctx) error {
 	}
 
 	// Generate Tokens
-	access_token, err := encryption.GenerateAccessToken(user.ID, user.Username)
+	access_token, err := encryption.GenerateAccessToken(user.ID)
 	if err != nil {
 		return c.Status(400).JSON(fiber.Map{"status": "fail", "message": err.Error()})
 	}
@@ -71,7 +71,7 @@ func (h *UserHandler) LoginUser(c *fiber.Ctx) error {
 		Name:     "access_token",
 		Value:    access_token,
 		Path:     "/",
-		MaxAge:   7 * 24,
+		MaxAge:   60 * 60 * 7 * 24,
 		HTTPOnly: true,
 		Secure:   true,
 		Domain:   "localhost",
@@ -90,4 +90,21 @@ func (h *UserHandler) LogoutUser(c *fiber.Ctx) error {
 	})
 
 	return c.Status(200).JSON(fiber.Map{"status": "success"})
+}
+
+func (h *UserHandler) GetUserSession(c *fiber.Ctx) error {
+	ctx := c.Context()
+	userId := c.Locals("user_id").(string)
+	sessionExpiration := c.Locals("expires").(float64)
+
+	user, err := h.repository.GetById(ctx, userId)
+	if err != nil {
+		return c.Status(500).JSON(fiber.Map{"status": "fail", "message": err.Error()})
+	}
+
+	return c.JSON(fiber.Map{
+		"status":  "success",
+		"user":    user,
+		"expires": sessionExpiration,
+	})
 }
